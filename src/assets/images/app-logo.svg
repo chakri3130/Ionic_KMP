@@ -1,0 +1,9 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="180" height="180" rx="42" fill="#F6F1FF"/>
+  <circle cx="90" cy="90" r="62" fill="#4A3F75"/>
+  <path d="M62 78C62 63.6406 73.6406 52 88 52H92C106.359 52 118 63.6406 118 78V82C118 90.8366 110.837 98 102 98H78C69.1634 98 62 90.8366 62 82V78Z" fill="#F9D4DA"/>
+  <path d="M58 88L90 110L122 88V120C122 128.837 114.837 136 106 136H74C65.1634 136 58 128.837 58 120V88Z" fill="#DFF7DF"/>
+  <path d="M74 82H106V88H74V82Z" fill="#4A3F75"/>
+  <path d="M90 52L99 65H81L90 52Z" fill="#F5A8A8"/>
+  <text x="90" y="150" text-anchor="middle" fill="#2D2348" font-size="18" font-family="Arial, sans-serif" font-weight="700">KMP</text>
+</svg>

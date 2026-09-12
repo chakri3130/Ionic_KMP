@@ -1,0 +1,72 @@
+.home-page {
+  --background: var(--app-background);
+}
+
+.page-header {
+  padding: 24px 20px 8px;
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--app-primary);
+  font-weight: 700;
+}
+
+.page-header h2 {
+  margin: 8px 0 0;
+  font-size: 2rem;
+  font-weight: 750;
+  color: var(--app-primary-strong);
+}
+
+.categories-grid {
+  padding: 12px 16px 20px;
+}
+
+.category-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 170px;
+  padding: 16px;
+  border-radius: 22px;
+  background: var(--category-color);
+  box-shadow: 0 18px 28px rgba(45, 35, 72, 0.08);
+}
+
+.icon-wrap {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+ion-icon {
+  font-size: 2rem;
+  color: var(--app-primary-strong);
+}
+
+.category-meta {
+  margin-top: 18px;
+}
+
+.category-meta h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--app-primary-strong);
+}
+
+.category-meta span {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.78rem;
+  color: rgba(29, 28, 42, 0.7);
+}

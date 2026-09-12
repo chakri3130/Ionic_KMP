@@ -1,0 +1,44 @@
+<ion-content [fullscreen]="true" class="login-page">
+  <div class="login-shell">
+    <div class="logo-wrapper">
+      <img [src]="currentTenant.logo" [alt]="currentTenant.appName + ' logo'" />
+    </div>
+
+    <ion-card class="login-card">
+      <ion-card-header>
+        <ion-card-title>Welcome back</ion-card-title>
+        <ion-card-subtitle>Sign in to continue</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+          <ion-item class="form-field" lines="none">
+            <ion-icon name="person-outline" slot="start"></ion-icon>
+            <ion-input
+              formControlName="username"
+              type="text"
+              label="Username"
+              labelPlacement="floating"
+              placeholder="Enter your username"
+            ></ion-input>
+          </ion-item>
+
+          <ion-item class="form-field" lines="none">
+            <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+            <ion-input
+              formControlName="password"
+              type="password"
+              label="Password"
+              labelPlacement="floating"
+              placeholder="Enter your password"
+            ></ion-input>
+          </ion-item>
+
+          <ion-button type="submit" expand="block" class="login-button" [disabled]="loginForm.invalid">
+            Login
+          </ion-button>
+        </form>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

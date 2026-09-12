@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Categories</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="home-page">
+  <div class="page-header">
+    <p class="eyebrow">Fresh picks</p>
+    <h2>Find your style</h2>
+  </div>
+
+  <ion-grid class="categories-grid">
+    <ion-row>
+      <ion-col size="6" *ngFor="let category of categories">
+        <article class="category-card" [ngStyle]="{ '--category-color': category.color }">
+          <div class="icon-wrap">
+            <ion-icon [name]="category.icon"></ion-icon>
+          </div>
+
+          <div class="category-meta">
+            <h3>{{ category.name }}</h3>
+            <span>{{ category.items }} items</span>
+          </div>
+        </article>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

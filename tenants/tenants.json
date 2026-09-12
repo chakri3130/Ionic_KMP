@@ -1,0 +1,246 @@
+{
+  "siemens": {
+    "appName": "Siemens",
+    "displayName": "Siemens",
+    "bundleId": "com.siemens.kmp",
+    "logo": "assets/tenant-logos/siemens.svg",
+    "apiBaseUrl": "/api",
+    "features": { "loyaltyProgram": true, "expressCheckout": true },
+    "splashBackground": "#eef4ff",
+    "splashAccent": "#0f6fd6",
+    "colors": {
+      "primary": "#0f6fd6",
+      "primaryStrong": "#103d75",
+      "background": "#f2f7ff",
+      "surface": "#ffffff",
+      "muted": "#5f6f87",
+      "categoryMen": "#dfeeff",
+      "categoryWomen": "#ffdfe9",
+      "categoryKids": "#dbf8e8",
+      "categoryAccessories": "#fff1c9",
+      "categoryFootwear": "#e8dfff",
+      "categorySale": "#ffe0cc"
+    },
+    "categories": [
+      {
+        "name": "Men",
+        "items": 120,
+        "icon": "shirt-outline",
+        "color": "#dfeeff"
+      },
+      {
+        "name": "Women",
+        "items": 180,
+        "icon": "sparkles-outline",
+        "color": "#ffdfe9"
+      },
+      {
+        "name": "Kids",
+        "items": 96,
+        "icon": "happy-outline",
+        "color": "#dbf8e8"
+      },
+      {
+        "name": "Accessories",
+        "items": 75,
+        "icon": "bag-outline",
+        "color": "#fff1c9"
+      },
+      {
+        "name": "Footwear",
+        "items": 88,
+        "icon": "walk-outline",
+        "color": "#e8dfff"
+      },
+      {
+        "name": "Sale",
+        "items": 140,
+        "icon": "pricetag-outline",
+        "color": "#ffe0cc"
+      }
+    ]
+  },
+  "climatix": {
+    "appName": "Climatix",
+    "displayName": "Climatix",
+    "bundleId": "com.climatix.kmp",
+    "logo": "assets/tenant-logos/climatix.svg",
+    "apiBaseUrl": "/api",
+    "features": { "loyaltyProgram": true, "expressCheckout": false },
+    "splashBackground": "#eefaf6",
+    "splashAccent": "#0f9d8d",
+    "colors": {
+      "primary": "#0f9d8d",
+      "primaryStrong": "#0a5d57",
+      "background": "#f1fbf9",
+      "surface": "#ffffff",
+      "muted": "#597470",
+      "categoryMen": "#dff7f3",
+      "categoryWomen": "#dfeafc",
+      "categoryKids": "#e8f8d8",
+      "categoryAccessories": "#f6e6c8",
+      "categoryFootwear": "#dfebff",
+      "categorySale": "#ffe3d0"
+    },
+    "categories": [
+      {
+        "name": "Men",
+        "items": 115,
+        "icon": "shirt-outline",
+        "color": "#dff7f3"
+      },
+      {
+        "name": "Women",
+        "items": 170,
+        "icon": "sparkles-outline",
+        "color": "#dfeafc"
+      },
+      {
+        "name": "Kids",
+        "items": 90,
+        "icon": "happy-outline",
+        "color": "#e8f8d8"
+      },
+      {
+        "name": "Accessories",
+        "items": 72,
+        "icon": "bag-outline",
+        "color": "#f6e6c8"
+      },
+      {
+        "name": "Footwear",
+        "items": 82,
+        "icon": "walk-outline",
+        "color": "#dfebff"
+      },
+      {
+        "name": "Sale",
+        "items": 135,
+        "icon": "pricetag-outline",
+        "color": "#ffe3d0"
+      }
+    ]
+  },
+  "cateroillar": {
+    "appName": "Cateroillar",
+    "displayName": "Cateroillar",
+    "bundleId": "com.cateroillar.kmp",
+    "logo": "assets/tenant-logos/cateroillar.svg",
+    "apiBaseUrl": "/api",
+    "features": { "loyaltyProgram": false, "expressCheckout": true },
+    "splashBackground": "#fff6ec",
+    "splashAccent": "#d9771d",
+    "colors": {
+      "primary": "#d9771d",
+      "primaryStrong": "#7a3d09",
+      "background": "#fff7f0",
+      "surface": "#ffffff",
+      "muted": "#7a5d4a",
+      "categoryMen": "#ffe5c9",
+      "categoryWomen": "#fce5f4",
+      "categoryKids": "#eaf9d7",
+      "categoryAccessories": "#fce7b5",
+      "categoryFootwear": "#e6e7ff",
+      "categorySale": "#ffd9c2"
+    },
+    "categories": [
+      {
+        "name": "Men",
+        "items": 110,
+        "icon": "shirt-outline",
+        "color": "#ffe5c9"
+      },
+      {
+        "name": "Women",
+        "items": 160,
+        "icon": "sparkles-outline",
+        "color": "#fce5f4"
+      },
+      {
+        "name": "Kids",
+        "items": 88,
+        "icon": "happy-outline",
+        "color": "#eaf9d7"
+      },
+      {
+        "name": "Accessories",
+        "items": 70,
+        "icon": "bag-outline",
+        "color": "#fce7b5"
+      },
+      {
+        "name": "Footwear",
+        "items": 78,
+        "icon": "walk-outline",
+        "color": "#e6e7ff"
+      },
+      {
+        "name": "Sale",
+        "items": 130,
+        "icon": "pricetag-outline",
+        "color": "#ffd9c2"
+      }
+    ]
+  },
+  "athena": {
+    "appName": "Athena",
+    "displayName": "Athena",
+    "bundleId": "com.athena.kmp",
+    "logo": "assets/tenant-logos/athena.svg",
+    "apiBaseUrl": "/api",
+    "features": { "loyaltyProgram": true, "expressCheckout": true },
+    "splashBackground": "#f5f0ff",
+    "splashAccent": "#7c4dff",
+    "colors": {
+      "primary": "#7c4dff",
+      "primaryStrong": "#41208e",
+      "background": "#f7f2ff",
+      "surface": "#ffffff",
+      "muted": "#685b8b",
+      "categoryMen": "#eaddff",
+      "categoryWomen": "#ffe1ee",
+      "categoryKids": "#dafaf0",
+      "categoryAccessories": "#f9e7b6",
+      "categoryFootwear": "#dfe9ff",
+      "categorySale": "#ffe2c9"
+    },
+    "categories": [
+      {
+        "name": "Men",
+        "items": 130,
+        "icon": "shirt-outline",
+        "color": "#eaddff"
+      },
+      {
+        "name": "Women",
+        "items": 185,
+        "icon": "sparkles-outline",
+        "color": "#ffe1ee"
+      },
+      {
+        "name": "Kids",
+        "items": 94,
+        "icon": "happy-outline",
+        "color": "#dafaf0"
+      },
+      {
+        "name": "Accessories",
+        "items": 80,
+        "icon": "bag-outline",
+        "color": "#f9e7b6"
+      },
+      {
+        "name": "Footwear",
+        "items": 90,
+        "icon": "walk-outline",
+        "color": "#dfe9ff"
+      },
+      {
+        "name": "Sale",
+        "items": 150,
+        "icon": "pricetag-outline",
+        "color": "#ffe2c9"
+      }
+    ]
+  }
+}

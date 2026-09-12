@@ -1,0 +1,74 @@
+{
+  "name": "Ionic_KMP",
+  "version": "0.0.1",
+  "author": "Ionic Framework",
+  "homepage": "https://ionicframework.com/",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "build:siemens": "ng build --configuration=siemens",
+    "build:climatix": "ng build --configuration=climatix",
+    "build:cateroillar": "ng build --configuration=cateroillar",
+    "build:athena": "ng build --configuration=athena",
+    "prepare:tenant": "node scripts/prepare-tenant-build.mjs",
+    "ci:android": "node scripts/prepare-tenant-build.mjs --platform=android",
+    "ci:ios": "node scripts/prepare-tenant-build.mjs --platform=ios",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "lint": "ng lint"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/common": "22.0.1",
+    "@angular/compiler": "22.0.1",
+    "@angular/core": "22.0.1",
+    "@angular/forms": "22.0.1",
+    "@angular/platform-browser": "22.0.1",
+    "@angular/platform-browser-dynamic": "22.0.1",
+    "@angular/router": "22.0.1",
+    "@ionic/angular": "^9.0.0",
+    "ionicons": "^8.1.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^22.0.1",
+    "@angular/build": "22.0.1",
+    "@angular/cli": "22.0.1",
+    "@angular/compiler-cli": "22.0.1",
+    "@angular/language-service": "22.0.1",
+    "@ionic/angular-toolkit": "^13.0.0",
+    "@ionic/cordova-builders": "^13.0.0",
+    "@schematics/angular": "^22.0.1",
+    "angular-eslint": "22.0.0",
+    "cordova": "12.0.0",
+    "cordova-android": "^15.1.0",
+    "cordova-ios": "7.1.1",
+    "cordova-plugin-device": "2.0.2",
+    "cordova-plugin-ionic-keyboard": "^2.0.5",
+    "cordova-plugin-ionic-webview": "^5.0.0",
+    "cordova-plugin-kmp-auth": "file:../KMPAuth",
+    "cordova-plugin-splashscreen": "5.0.2",
+    "cordova-plugin-statusbar": "^2.4.2",
+    "eslint": "^9.16.0",
+    "jsdom": "^26.0.0",
+    "typescript": "~6.0.0",
+    "typescript-eslint": "^8.61.0",
+    "vitest": "^4.0.8"
+  },
+  "description": "An Ionic project",
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-ionic-webview": {},
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-plugin-kmp-auth": {}
+    },
+    "platforms": [
+      "android"
+    ]
+  }
+}
