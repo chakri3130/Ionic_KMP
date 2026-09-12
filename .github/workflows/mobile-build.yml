@@ -45,15 +45,18 @@ jobs:
           printf '%s' "$ANDROID_KEYSTORE_BASE64" | base64 --decode > release.keystore
           npx cordova build android --release -- --keystore="$GITHUB_WORKSPACE/release.keystore" --storePassword="$ANDROID_KEYSTORE_PASSWORD" --alias="$ANDROID_KEY_ALIAS" --password="$ANDROID_KEY_PASSWORD" --packageType=apk
           npx cordova build android --release -- --keystore="$GITHUB_WORKSPACE/release.keystore" --storePassword="$ANDROID_KEYSTORE_PASSWORD" --alias="$ANDROID_KEY_ALIAS" --password="$ANDROID_KEY_PASSWORD" --packageType=bundle
-      - name: Collect Android artifacts
+      - name: Verify Android build outputs
         run: |
-          mkdir -p artifacts/${{ inputs.tenant }}/android
-          cp platforms/android/app/build/outputs/apk/release/*.apk artifacts/${{ inputs.tenant }}/android/${{ inputs.tenant }}.apk
-          cp platforms/android/app/build/outputs/bundle/release/*.aab artifacts/${{ inputs.tenant }}/android/${{ inputs.tenant }}.aab
-      - uses: actions/upload-artifact@v4
+          find platforms/android/app/build/outputs -type f \( -name '*.apk' -o -name '*.aab' \) -print
+          test -n "$(find platforms/android/app/build/outputs -type f -name '*.apk' -print -quit)"
+          test -n "$(find platforms/android/app/build/outputs -type f -name '*.aab' -print -quit)"
+      - name: Upload Android APK and AAB
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ inputs.tenant }}-android
-          path: artifacts/${{ inputs.tenant }}/android
+          path: |
+            platforms/android/app/build/outputs/apk/**/*.apk
+            platforms/android/app/build/outputs/bundle/**/*.aab
           if-no-files-found: error
 
   ios:
