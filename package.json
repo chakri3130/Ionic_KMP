@@ -48,7 +48,6 @@
     "cordova-plugin-device": "2.0.2",
     "cordova-plugin-ionic-keyboard": "^2.0.5",
     "cordova-plugin-ionic-webview": "^5.0.0",
-    "cordova-plugin-kmp-auth": "file:../KMPAuth",
     "cordova-plugin-splashscreen": "5.0.2",
     "cordova-plugin-statusbar": "^2.4.2",
     "eslint": "^9.16.0",
@@ -64,8 +63,7 @@
       "cordova-plugin-device": {},
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-ionic-webview": {},
-      "cordova-plugin-ionic-keyboard": {},
-      "cordova-plugin-kmp-auth": {}
+      "cordova-plugin-ionic-keyboard": {}
     },
     "platforms": [
       "android"
