@@ -16,19 +16,4 @@ declare const KmpAuth: {
 
 @Injectable({ providedIn: 'root' })
 export class KmpAuthService {
-  login(username: string, password: string): Promise<UserSession> {
-    if (typeof KmpAuth?.login === 'function') {
-      return KmpAuth.login(username, password);
-    }
-
-    return Promise.resolve({
-      authenticated: !!username && !!password,
-      userId: 1,
-      username,
-      email: `${username}@example.com`,
-      firstName: 'Demo',
-      lastName: 'User',
-      image: 'assets/images/app-logo.svg',
-    });
-  }
 }

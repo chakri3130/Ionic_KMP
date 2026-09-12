@@ -34,25 +34,7 @@ export class LoginPage implements OnInit {
     this.tenantService.applyTheme();
   }
 
-  async onLogin(): Promise<void> {
-    if (this.loginForm.invalid) {
-      this.loginForm.markAllAsTouched();
-      return;
-    }
-
-    const { username, password } = this.loginForm.value;
-
-    try {
-      const user = await this.authService.login(username, password);
-
-      if (user?.authenticated) {
-        this.router.navigate(['/home']);
-        return;
-      }
-
-      console.warn('Invalid username or password');
-    } catch (error) {
-      console.error('Login failed:', error);
-    }
+  async onLogin() {
+    this.router.navigate(['/home']);
   }
 }
