@@ -1,4 +1,4 @@
-import { cpSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { copyFileSync, cpSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
@@ -31,6 +31,24 @@ if (!environmentConfig) {
   throw new Error(
     `Unknown environment "${deploymentEnvironment}" for ${tenantKey}. Allowed values: ${Object.keys(tenant.environments ?? {}).join(', ')}.`,
   );
+}
+
+const tenantIconPath = resolve(projectRoot, tenant.nativeAssets?.icon ?? '');
+const tenantSplashPath = resolve(projectRoot, tenant.nativeAssets?.splash ?? '');
+if (!existsSync(tenantIconPath) || !existsSync(tenantSplashPath)) {
+  throw new Error(
+    `Missing native assets for ${tenantKey}. Add icon.png and splash.png to resources/tenants/${tenantKey}/.`,
+  );
+}
+
+copyFileSync(tenantIconPath, resolve(projectRoot, 'resources', 'icon.png'));
+copyFileSync(tenantSplashPath, resolve(projectRoot, 'resources', 'splash.png'));
+
+for (const resourcePlatform of platform ? [platform] : ['android', 'ios']) {
+  execFileSync('npx', ['cordova-res', resourcePlatform, '--skip-config', '--copy'], {
+    cwd: projectRoot,
+    stdio: 'inherit',
+  });
 }
 
 const tenantEnvironmentFile = resolve(projectRoot, 'src', 'environments', `environment.${tenantKey}.ts`);

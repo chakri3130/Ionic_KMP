@@ -15,6 +15,10 @@ export interface TenantConfig {
   displayName: string;
   bundleId: string;
   logo: string;
+  nativeAssets: {
+    icon: string;
+    splash: string;
+  };
   environments: Record<DeploymentEnvironment, TenantEnvironmentConfig>;
   features: {
     loyaltyProgram: boolean;

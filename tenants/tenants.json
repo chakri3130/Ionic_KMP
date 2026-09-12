@@ -4,6 +4,7 @@
     "displayName": "Siemens",
     "bundleId": "com.siemens.kmp",
     "logo": "assets/tenant-logos/siemens.svg",
+    "nativeAssets": { "icon": "resources/tenants/siemens/icon.png", "splash": "resources/tenants/siemens/splash.png" },
     "environments": {
       "development": { "apiBaseUrl": "https://dev-api.siemens.example.com", "bundleIdSuffix": ".dev", "displayNameSuffix": " Dev", "iosExportMethod": "development" },
       "staging": { "apiBaseUrl": "https://staging-api.siemens.example.com", "bundleIdSuffix": ".staging", "displayNameSuffix": " Staging", "iosExportMethod": "ad-hoc" },
@@ -69,6 +70,7 @@
     "displayName": "Climatix",
     "bundleId": "com.climatix.kmp",
     "logo": "assets/tenant-logos/climatix.svg",
+    "nativeAssets": { "icon": "resources/tenants/climatix/icon.png", "splash": "resources/tenants/climatix/splash.png" },
     "environments": {
       "development": { "apiBaseUrl": "https://dev-api.climatix.example.com", "bundleIdSuffix": ".dev", "displayNameSuffix": " Dev", "iosExportMethod": "development" },
       "staging": { "apiBaseUrl": "https://staging-api.climatix.example.com", "bundleIdSuffix": ".staging", "displayNameSuffix": " Staging", "iosExportMethod": "ad-hoc" },
@@ -134,6 +136,7 @@
     "displayName": "Cateroillar",
     "bundleId": "com.cateroillar.kmp",
     "logo": "assets/tenant-logos/cateroillar.svg",
+    "nativeAssets": { "icon": "resources/tenants/cateroillar/icon.png", "splash": "resources/tenants/cateroillar/splash.png" },
     "environments": {
       "development": { "apiBaseUrl": "https://dev-api.cateroillar.example.com", "bundleIdSuffix": ".dev", "displayNameSuffix": " Dev", "iosExportMethod": "development" },
       "staging": { "apiBaseUrl": "https://staging-api.cateroillar.example.com", "bundleIdSuffix": ".staging", "displayNameSuffix": " Staging", "iosExportMethod": "ad-hoc" },
@@ -199,6 +202,7 @@
     "displayName": "Athena",
     "bundleId": "com.athena.kmp",
     "logo": "assets/tenant-logos/athena.svg",
+    "nativeAssets": { "icon": "resources/tenants/athena/icon.png", "splash": "resources/tenants/athena/splash.png" },
     "environments": {
       "development": { "apiBaseUrl": "https://dev-api.athena.example.com", "bundleIdSuffix": ".dev", "displayNameSuffix": " Dev", "iosExportMethod": "development" },
       "staging": { "apiBaseUrl": "https://staging-api.athena.example.com", "bundleIdSuffix": ".staging", "displayNameSuffix": " Staging", "iosExportMethod": "ad-hoc" },

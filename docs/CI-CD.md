@@ -32,4 +32,6 @@ Repeat for every tenant bundle ID. The workflow uses `readonly: true`, so CI can
 
 Each tenant's `environments` section sets the API URL, native bundle-ID suffix, display-name suffix, and iOS export method. Replace the `*.example.com` API URLs before deployment. Create matching Apple App IDs and Fastlane Match profiles for development and staging IDs as well as production.
 
+Each tenant must also supply `resources/tenants/<tenant>/icon.png` and `splash.png`. See `resources/tenants/README.md` for the required source dimensions. The build generates platform-specific Android and iOS assets from those masters.
+
 Native icons and splash assets currently come from the shared Cordova `resources/` directory. Add tenant-specific resource generation before release if each store app needs its own launcher icon or native splash screen.
