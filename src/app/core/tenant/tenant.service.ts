@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { environment } from '../../../environments/environment';
-import { TENANT_CONFIGS, TenantConfig, TenantKey } from './tenant-config';
+import { DeploymentEnvironment, TENANT_CONFIGS, TenantConfig, TenantKey } from './tenant-config';
 
 @Injectable({ providedIn: 'root' })
 export class TenantService {
@@ -14,7 +14,14 @@ export class TenantService {
   }
 
   get apiBaseUrl(): string {
-    return this.currentTenant.apiBaseUrl;
+    return this.currentTenant.environments[this.deploymentEnvironment].apiBaseUrl;
+  }
+
+  get deploymentEnvironment(): DeploymentEnvironment {
+    const deploymentEnvironment = environment.deploymentEnvironment as DeploymentEnvironment;
+    return ['development', 'staging', 'production'].includes(deploymentEnvironment)
+      ? deploymentEnvironment
+      : 'development';
   }
 
   isFeatureEnabled(feature: keyof TenantConfig['features']): boolean {

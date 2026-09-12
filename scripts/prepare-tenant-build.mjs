@@ -13,6 +13,7 @@ const argumentsByName = Object.fromEntries(
 );
 const tenantKey = argumentsByName.tenant;
 const platform = argumentsByName.platform;
+const deploymentEnvironment = argumentsByName.environment || 'development';
 const tenantsPath = resolve(projectRoot, 'tenants', 'tenants.json');
 const tenants = JSON.parse(readFileSync(tenantsPath, 'utf8'));
 const tenant = tenants[tenantKey];
@@ -25,12 +26,25 @@ if (platform && !['android', 'ios'].includes(platform)) {
   throw new Error('The platform must be android or ios.');
 }
 
-execFileSync('npx', ['ng', 'build', `--configuration=${tenantKey}`], {
+const environmentConfig = tenant.environments?.[deploymentEnvironment];
+if (!environmentConfig) {
+  throw new Error(
+    `Unknown environment "${deploymentEnvironment}" for ${tenantKey}. Allowed values: ${Object.keys(tenant.environments ?? {}).join(', ')}.`,
+  );
+}
+
+const tenantEnvironmentFile = resolve(projectRoot, 'src', 'environments', `environment.${tenantKey}.ts`);
+writeFileSync(
+  tenantEnvironmentFile,
+  `export const environment = {\n  production: ${deploymentEnvironment === 'production'},\n  tenantKey: '${tenantKey}',\n  deploymentEnvironment: '${deploymentEnvironment}',\n};\n`,
+);
+
+execFileSync('npx', ['ng', 'build', `--configuration=${tenantKey}`, `--output-path=dist/${tenantKey}/${deploymentEnvironment}`], {
   cwd: projectRoot,
   stdio: 'inherit',
 });
 
-const webBuildDirectory = resolve(projectRoot, 'dist', tenantKey);
+const webBuildDirectory = resolve(projectRoot, 'dist', tenantKey, deploymentEnvironment);
 const cordovaWebDirectory = resolve(projectRoot, 'www');
 if (!existsSync(webBuildDirectory)) {
   throw new Error(`Angular build output was not found: ${webBuildDirectory}`);
@@ -42,8 +56,10 @@ cpSync(webBuildDirectory, cordovaWebDirectory, { recursive: true });
 
 const configPath = resolve(projectRoot, 'config.xml');
 let configXml = readFileSync(configPath, 'utf8');
-configXml = configXml.replace(/<widget id="[^"]+"/, `<widget id="${tenant.bundleId}"`);
-configXml = configXml.replace(/<name>.*?<\/name>/s, `<name>${tenant.displayName}</name>`);
+const bundleId = `${tenant.bundleId}${environmentConfig.bundleIdSuffix}`;
+const displayName = `${tenant.displayName}${environmentConfig.displayNameSuffix}`;
+configXml = configXml.replace(/<widget id="[^"]+"/, `<widget id="${bundleId}"`);
+configXml = configXml.replace(/<name>.*?<\/name>/s, `<name>${displayName}</name>`);
 writeFileSync(configPath, configXml);
 
-console.log(`Prepared ${tenant.appName} (${tenant.bundleId}) for ${platform ?? 'native'} build.`);
+console.log(`Prepared ${displayName} (${bundleId}) for ${platform ?? 'native'} build.`);

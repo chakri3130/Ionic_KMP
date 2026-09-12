@@ -3,17 +3,21 @@ require 'json'
 default_platform(:ios)
 
 platform :ios do
-  desc 'Build a signed IPA for the selected tenant. Usage: bundle exec fastlane ios build tenant:athena'
+  desc 'Build a signed IPA. Usage: bundle exec fastlane ios build tenant:athena environment:production'
   lane :build do |options|
     tenant_key = options[:tenant]
+    deployment_environment = options[:environment] || 'development'
     tenants = JSON.parse(File.read(File.expand_path('../tenants/tenants.json', __dir__)))
     tenant = tenants[tenant_key]
     UI.user_error!("Unknown tenant: #{tenant_key}") unless tenant
+    environment_config = tenant.fetch('environments').fetch(deployment_environment)
 
-    app_identifier = tenant.fetch('bundleId')
-    app_name = tenant.fetch('appName')
+    app_identifier = "#{tenant.fetch('bundleId')}#{environment_config.fetch('bundleIdSuffix')}"
+    app_name = "#{tenant.fetch('appName')}#{environment_config.fetch('displayNameSuffix')}"
+    export_method = environment_config.fetch('iosExportMethod')
+    match_type = { 'app-store' => 'appstore', 'ad-hoc' => 'adhoc', 'development' => 'development' }.fetch(export_method)
     match(
-      type: ENV.fetch('IOS_EXPORT_METHOD', 'app-store'),
+      type: match_type,
       app_identifier: app_identifier,
       readonly: true
     )
@@ -25,9 +29,9 @@ platform :ios do
       workspace: workspace,
       scheme: app_name,
       configuration: 'Release',
-      export_method: ENV.fetch('IOS_EXPORT_METHOD', 'app-store'),
-      output_directory: File.join(__dir__, '..', 'artifacts', tenant_key, 'ios'),
-      output_name: "#{tenant_key}.ipa",
+      export_method: export_method,
+      output_directory: File.join(__dir__, '..', 'artifacts', tenant_key, deployment_environment, 'ios'),
+      output_name: "#{tenant_key}-#{deployment_environment}.ipa",
       clean: true
     )
   end

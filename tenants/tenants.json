@@ -4,7 +4,11 @@
     "displayName": "Siemens",
     "bundleId": "com.siemens.kmp",
     "logo": "assets/tenant-logos/siemens.svg",
-    "apiBaseUrl": "/api",
+    "environments": {
+      "development": { "apiBaseUrl": "https://dev-api.siemens.example.com", "bundleIdSuffix": ".dev", "displayNameSuffix": " Dev", "iosExportMethod": "development" },
+      "staging": { "apiBaseUrl": "https://staging-api.siemens.example.com", "bundleIdSuffix": ".staging", "displayNameSuffix": " Staging", "iosExportMethod": "ad-hoc" },
+      "production": { "apiBaseUrl": "https://api.siemens.example.com", "bundleIdSuffix": "", "displayNameSuffix": "", "iosExportMethod": "app-store" }
+    },
     "features": { "loyaltyProgram": true, "expressCheckout": true },
     "splashBackground": "#eef4ff",
     "splashAccent": "#0f6fd6",
@@ -65,7 +69,11 @@
     "displayName": "Climatix",
     "bundleId": "com.climatix.kmp",
     "logo": "assets/tenant-logos/climatix.svg",
-    "apiBaseUrl": "/api",
+    "environments": {
+      "development": { "apiBaseUrl": "https://dev-api.climatix.example.com", "bundleIdSuffix": ".dev", "displayNameSuffix": " Dev", "iosExportMethod": "development" },
+      "staging": { "apiBaseUrl": "https://staging-api.climatix.example.com", "bundleIdSuffix": ".staging", "displayNameSuffix": " Staging", "iosExportMethod": "ad-hoc" },
+      "production": { "apiBaseUrl": "https://api.climatix.example.com", "bundleIdSuffix": "", "displayNameSuffix": "", "iosExportMethod": "app-store" }
+    },
     "features": { "loyaltyProgram": true, "expressCheckout": false },
     "splashBackground": "#eefaf6",
     "splashAccent": "#0f9d8d",
@@ -126,7 +134,11 @@
     "displayName": "Cateroillar",
     "bundleId": "com.cateroillar.kmp",
     "logo": "assets/tenant-logos/cateroillar.svg",
-    "apiBaseUrl": "/api",
+    "environments": {
+      "development": { "apiBaseUrl": "https://dev-api.cateroillar.example.com", "bundleIdSuffix": ".dev", "displayNameSuffix": " Dev", "iosExportMethod": "development" },
+      "staging": { "apiBaseUrl": "https://staging-api.cateroillar.example.com", "bundleIdSuffix": ".staging", "displayNameSuffix": " Staging", "iosExportMethod": "ad-hoc" },
+      "production": { "apiBaseUrl": "https://api.cateroillar.example.com", "bundleIdSuffix": "", "displayNameSuffix": "", "iosExportMethod": "app-store" }
+    },
     "features": { "loyaltyProgram": false, "expressCheckout": true },
     "splashBackground": "#fff6ec",
     "splashAccent": "#d9771d",
@@ -187,7 +199,11 @@
     "displayName": "Athena",
     "bundleId": "com.athena.kmp",
     "logo": "assets/tenant-logos/athena.svg",
-    "apiBaseUrl": "/api",
+    "environments": {
+      "development": { "apiBaseUrl": "https://dev-api.athena.example.com", "bundleIdSuffix": ".dev", "displayNameSuffix": " Dev", "iosExportMethod": "development" },
+      "staging": { "apiBaseUrl": "https://staging-api.athena.example.com", "bundleIdSuffix": ".staging", "displayNameSuffix": " Staging", "iosExportMethod": "ad-hoc" },
+      "production": { "apiBaseUrl": "https://api.athena.example.com", "bundleIdSuffix": "", "displayNameSuffix": "", "iosExportMethod": "app-store" }
+    },
     "features": { "loyaltyProgram": true, "expressCheckout": true },
     "splashBackground": "#f5f0ff",
     "splashAccent": "#7c4dff",

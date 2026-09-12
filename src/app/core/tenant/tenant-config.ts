@@ -15,7 +15,7 @@ export interface TenantConfig {
   displayName: string;
   bundleId: string;
   logo: string;
-  apiBaseUrl: string;
+  environments: Record<DeploymentEnvironment, TenantEnvironmentConfig>;
   features: {
     loyaltyProgram: boolean;
     expressCheckout: boolean;
@@ -36,6 +36,15 @@ export interface TenantConfig {
     categorySale: string;
   };
   categories: TenantCategory[];
+}
+
+export type DeploymentEnvironment = 'development' | 'staging' | 'production';
+
+export interface TenantEnvironmentConfig {
+  apiBaseUrl: string;
+  bundleIdSuffix: string;
+  displayNameSuffix: string;
+  iosExportMethod: 'development' | 'ad-hoc' | 'app-store';
 }
 
 export const TENANT_CONFIGS = Object.fromEntries(

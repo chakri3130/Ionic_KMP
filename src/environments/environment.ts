@@ -1,4 +1,5 @@
 export const environment = {
   production: false,
-  tenantKey: 'climatix'
+  tenantKey: 'climatix',
+  deploymentEnvironment: 'development',
 };
